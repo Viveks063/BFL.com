@@ -1,0 +1,157 @@
+import { AnimatedHeading } from './components/AnimatedHeading'
+import { FadeIn } from './components/FadeIn'
+import { ScrollReveal } from './components/ScrollReveal'
+import { LimelightNav } from '@/components/ui/limelight-nav'
+import { Home, Boxes, Eye, GitBranch, BarChart3, HelpCircle, Rocket } from 'lucide-react'
+import { WhatWeBuild } from './sections/WhatWeBuild'
+import { WhyBFL } from './sections/WhyBFL'
+import { Vision } from './sections/Vision'
+import { Process } from './sections/Process'
+import { Stats } from './sections/Stats'
+import { FAQ } from './sections/FAQ'
+import { CTA } from './sections/CTA'
+import { AuroraSignUp } from './sections/AuroraSignUp'
+
+function scrollTo(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
+
+const navItems = [
+  { id: 'hero', icon: <Home />, label: 'Home', onClick: () => scrollTo('hero') },
+  { id: 'products', icon: <Boxes />, label: 'Products', onClick: () => scrollTo('products') },
+  { id: 'vision', icon: <Eye />, label: 'Vision', onClick: () => scrollTo('vision') },
+  { id: 'process', icon: <GitBranch />, label: 'Process', onClick: () => scrollTo('process') },
+  { id: 'faq', icon: <HelpCircle />, label: 'FAQ', onClick: () => scrollTo('faq') },
+]
+
+const footerLinks = [
+  { label: 'Products', target: 'products' },
+  { label: 'Why BFL', target: 'why-bfl' },
+  { label: 'Vision', target: 'vision' },
+  { label: 'FAQ', target: 'faq' },
+]
+
+function App() {
+  return (
+    <div className="bg-black text-white">
+      {/* Hero Section */}
+      <div id="hero" className="relative min-h-screen overflow-hidden">
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+
+        <div className="relative z-10 min-h-screen flex flex-col">
+          <nav className="px-6 md:px-12 lg:px-16 pt-6">
+            <div className="liquid-glass rounded-xl px-4 py-2 flex items-center justify-between">
+              <span
+                className="text-2xl font-semibold tracking-tight cursor-pointer"
+                onClick={() => scrollTo('hero')}
+              >
+                BFL
+              </span>
+              <div className="hidden md:block">
+                <LimelightNav
+                  items={navItems}
+                  className="bg-transparent"
+                  iconClassName="text-white"
+                />
+              </div>
+              <button
+                className="bg-white text-black px-6 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors"
+                onClick={() => scrollTo('signup')}
+              >
+                Sign Up
+              </button>
+            </div>
+          </nav>
+
+          <div className="flex-1 flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-12 lg:pb-16">
+            <div className="lg:grid lg:grid-cols-2 lg:items-end">
+              <div>
+                <AnimatedHeading text={"Shaping tomorrow\nwith vision and action."} />
+                <FadeIn delay={800} duration={1000}>
+                  <p className="text-base md:text-lg text-gray-300 mb-5">
+                    We back visionaries and craft ventures that define what comes next.
+                  </p>
+                </FadeIn>
+                <FadeIn delay={1200} duration={1000}>
+                  <div className="flex flex-wrap gap-4">
+                    <button
+                      className="bg-white text-black px-8 py-3 rounded-lg font-medium"
+                      onClick={() => scrollTo('signup')}
+                    >
+                      Get Started
+                    </button>
+                    <button
+                      className="liquid-glass border border-white/20 text-white px-8 py-3 rounded-lg font-medium transition-colors hover:bg-white hover:text-black"
+                      onClick={() => scrollTo('products')}
+                    >
+                      Explore Now
+                    </button>
+                  </div>
+                </FadeIn>
+              </div>
+
+              <div className="flex items-end justify-start lg:justify-end mt-8 lg:mt-0">
+                <FadeIn delay={1400} duration={1000}>
+                  <div className="liquid-glass border border-white/20 px-6 py-3 rounded-xl">
+                    <span className="text-lg md:text-xl lg:text-2xl font-light">
+                      Investing. Building. Advisory.
+                    </span>
+                  </div>
+                </FadeIn>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Sections */}
+      <div id="products"><WhatWeBuild /></div>
+      <div id="why-bfl"><WhyBFL /></div>
+      <div id="vision"><Vision /></div>
+      <div id="process"><Process /></div>
+      <div id="stats"><Stats /></div>
+      <div id="faq"><FAQ /></div>
+      <div id="cta"><CTA /></div>
+      <div id="signup"><AuroraSignUp /></div>
+
+      {/* Footer */}
+      <footer className="relative px-6 md:px-12 lg:px-16 py-16 border-t border-white/[0.06] overflow-hidden">
+        <div className="orb orb-2" style={{ top: '-60%', right: '-15%', opacity: 0.3 }} />
+        <div className="relative z-10">
+          <ScrollReveal animation="fade-up">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <span
+                className="text-2xl font-semibold tracking-tight cursor-pointer"
+                onClick={() => scrollTo('hero')}
+              >
+                BFL
+              </span>
+              <div className="flex items-center gap-8">
+                {footerLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={`#${link.target}`}
+                    onClick={(e) => { e.preventDefault(); scrollTo(link.target) }}
+                    className="text-sm text-gray-500 hover:text-white transition-colors duration-300"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+              <span className="text-sm text-gray-600">&copy; 2026 BuildForge Labs</span>
+            </div>
+          </ScrollReveal>
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+export default App
