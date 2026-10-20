@@ -73,7 +73,7 @@ function App() {
           <div className="flex-1 flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-12 lg:pb-16">
             <div className="lg:grid lg:grid-cols-2 lg:items-end">
               <div>
-                <AnimatedHeading text={"Your next software\nproject,\nbuilt and shipped."} />
+                <AnimatedHeading text={"Your next software project,\nbuilt and shipped."} />
                 <FadeIn delay={800} duration={1000}>
                   <p className="text-base md:text-lg text-gray-300 mb-5">
                     I help software agencies and startups build web applications, mobile apps, backend APIs, and integrations through focused, project-based development.

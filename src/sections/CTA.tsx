@@ -30,10 +30,16 @@ export function CTA() {
             </ScrollReveal>
             <ScrollReveal delay={500} animation="fade-up">
               <div className="flex flex-wrap justify-center gap-4">
-                <button className="bg-white text-black px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-gray-100 hover:scale-105 active:scale-95">
+                <button
+                  onClick={() => document.getElementById('signup')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-white text-black px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-gray-100 hover:scale-105 active:scale-95 cursor-pointer"
+                >
                   Discuss Your Project
                 </button>
-                <button className="liquid-glass border border-white/20 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 active:scale-95">
+                <button
+                  onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="liquid-glass border border-white/20 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 active:scale-95 cursor-pointer"
+                >
                   View Selected Work
                 </button>
               </div>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Circle } from 'lucide-react'
+import { Circle, Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 10 },
@@ -43,6 +43,7 @@ function InputGroup({
   value,
   onChange,
   multiline = false,
+  disabled = false,
 }: {
   label: string
   placeholder: string
@@ -50,6 +51,7 @@ function InputGroup({
   value: string
   onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
   multiline?: boolean
+  disabled?: boolean
 }) {
   return (
     <div className="space-y-2">
@@ -61,7 +63,8 @@ function InputGroup({
             onChange={onChange}
             placeholder={placeholder}
             rows={5}
-            className="min-h-[120px] w-full rounded-xl border-none bg-brand-gray px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-white/20"
+            disabled={disabled}
+            className="min-h-[120px] w-full rounded-xl border-none bg-brand-gray px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-white/20 disabled:opacity-50"
           />
         ) : (
           <input
@@ -69,7 +72,8 @@ function InputGroup({
             value={value}
             onChange={onChange}
             placeholder={placeholder}
-            className="h-11 w-full rounded-xl border-none bg-brand-gray px-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-white/20"
+            disabled={disabled}
+            className="h-11 w-full rounded-xl border-none bg-brand-gray px-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-white/20 disabled:opacity-50"
           />
         )}
       </div>
@@ -85,44 +89,118 @@ export function AuroraSignUp() {
     project: '',
     message: '',
   })
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'activation_needed' | 'error'>('idle')
+  const [statusMessage, setStatusMessage] = useState('')
 
   const handleChange = (
     field: keyof typeof formData,
   ) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (status !== 'idle') {
+      setStatus('idle')
+      setStatusMessage('')
+    }
     setFormData((current) => ({ ...current, [field]: event.target.value }))
   }
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
-    const requiredFields = [
-      formData.firstName.trim(),
-      formData.lastName.trim(),
-      formData.email.trim(),
-      formData.project.trim(),
-      formData.message.trim(),
-    ]
+    const firstName = formData.firstName.trim()
+    const lastName = formData.lastName.trim()
+    const email = formData.email.trim()
+    const project = formData.project.trim()
+    const message = formData.message.trim()
 
-    if (requiredFields.some((field) => !field)) {
-      window.alert('Please fill in all fields before sending your inquiry.')
+    if (!firstName || !lastName || !email || !project || !message) {
+      setStatus('error')
+      setStatusMessage('Please fill in all fields before sending your inquiry.')
       return
     }
 
-    const clientName = [formData.firstName, formData.lastName].filter(Boolean).join(' ') || 'Client'
-    const subject = encodeURIComponent(`Project inquiry from ${clientName}`)
-    const body = encodeURIComponent(
-      [
-        `Name: ${clientName}`,
-        `Email: ${formData.email || 'Not provided'}`,
-        `Project: ${formData.project || 'Not provided'}`,
-        '',
-        'Project details:',
-        formData.message || 'No additional details provided.',
-      ].join('\n'),
-    )
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      setStatus('error')
+      setStatusMessage('Please enter a valid email address.')
+      return
+    }
 
+    setStatus('loading')
+    setStatusMessage('')
+
+    const clientName = [firstName, lastName].filter(Boolean).join(' ') || 'Client'
     const recipient = 'viveksuvarna063@gmail.com'
-    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`
+
+    try {
+      const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+      let response: Response
+
+      if (web3FormsKey) {
+        response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            access_key: web3FormsKey,
+            name: clientName,
+            email: email,
+            project: project,
+            message: message,
+            subject: `Project inquiry from ${clientName}`,
+            from_name: 'BuildForge Labs Website',
+          }),
+        })
+      } else {
+        response = await fetch(`https://formsubmit.co/ajax/${recipient}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            name: clientName,
+            email: email,
+            project: project,
+            message: message,
+            _subject: `Project inquiry from ${clientName}`,
+            _replyto: email,
+            _captcha: 'false',
+            _template: 'table',
+          }),
+        })
+      }
+
+      const data = await response.json()
+
+      if (data.success === true || data.success === 'true') {
+        setStatus('success')
+        setStatusMessage("Thank you! Your inquiry has been sent. I'll get back to you shortly.")
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          project: '',
+          message: '',
+        })
+      } else if (typeof data.message === 'string' && data.message.toLowerCase().includes('activation')) {
+        setStatus('activation_needed')
+        setStatusMessage("One-time setup: FormSubmit sent a verification email to viveksuvarna063@gmail.com. Please click 'Activate Form' in that email once so future submissions land directly in your inbox.")
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          project: '',
+          message: '',
+        })
+      } else {
+        setStatus('error')
+        setStatusMessage(data.message || 'Failed to send inquiry. Please try again.')
+      }
+    } catch {
+      setStatus('error')
+      setStatusMessage('Network error. Please check your internet connection and try again.')
+    }
   }
 
   return (
@@ -193,12 +271,14 @@ export function AuroraSignUp() {
                   placeholder="John"
                   value={formData.firstName}
                   onChange={handleChange('firstName')}
+                  disabled={status === 'loading'}
                 />
                 <InputGroup
                   label="Last Name"
                   placeholder="Doe"
                   value={formData.lastName}
                   onChange={handleChange('lastName')}
+                  disabled={status === 'loading'}
                 />
               </div>
 
@@ -208,6 +288,7 @@ export function AuroraSignUp() {
                 type="email"
                 value={formData.email}
                 onChange={handleChange('email')}
+                disabled={status === 'loading'}
               />
 
               <InputGroup
@@ -215,6 +296,7 @@ export function AuroraSignUp() {
                 placeholder="What are you building?"
                 value={formData.project}
                 onChange={handleChange('project')}
+                disabled={status === 'loading'}
               />
 
               <InputGroup
@@ -223,13 +305,64 @@ export function AuroraSignUp() {
                 value={formData.message}
                 onChange={handleChange('message')}
                 multiline
+                disabled={status === 'loading'}
               />
+
+              {status === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-start gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-emerald-300 text-sm"
+                >
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-400 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-emerald-200">Inquiry Sent Successfully</p>
+                    <p className="text-emerald-300/80 text-xs mt-0.5">{statusMessage}</p>
+                  </div>
+                </motion.div>
+              )}
+
+              {status === 'activation_needed' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-start gap-3 rounded-xl border border-amber-500/30 bg-amber-500/10 p-4 text-amber-300 text-sm"
+                >
+                  <AlertCircle className="h-5 w-5 shrink-0 text-amber-400 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-amber-200">One-Time Activation Needed</p>
+                    <p className="text-amber-300/80 text-xs mt-0.5">{statusMessage}</p>
+                  </div>
+                </motion.div>
+              )}
+
+              {status === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-start gap-3 rounded-xl border border-rose-500/30 bg-rose-500/10 p-4 text-rose-300 text-sm"
+                >
+                  <AlertCircle className="h-5 w-5 shrink-0 text-rose-400 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-rose-200">Could Not Send</p>
+                    <p className="text-rose-300/80 text-xs mt-0.5">{statusMessage}</p>
+                  </div>
+                </motion.div>
+              )}
 
               <button
                 type="submit"
-                className="mt-4 h-14 w-full rounded-xl bg-white font-semibold text-black transition-all hover:bg-white/90 active:scale-[0.98] cursor-pointer"
+                disabled={status === 'loading'}
+                className="mt-4 flex h-14 w-full items-center justify-center gap-2 rounded-xl bg-white font-semibold text-black transition-all hover:bg-white/90 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
               >
-                Send Inquiry
+                {status === 'loading' ? (
+                  <>
+                    <Loader2 className="h-5 w-5 animate-spin text-black" />
+                    <span>Sending Inquiry...</span>
+                  </>
+                ) : (
+                  <span>Send Inquiry</span>
+                )}
               </button>
             </form>
 
