@@ -23,7 +23,7 @@ export function AnimatedHeading({ text, className }: { text: string; className?:
         "font-normal mb-4 max-w-[1000px] text-[clamp(2.2rem,3.4vw,4rem)] md:text-[clamp(2.6rem,3.8vw,4.8rem)] lg:text-[clamp(2.8rem,3.8vw,5.2rem)]",
         className
       )}
-      style={{ letterSpacing: '-0.04em', lineHeight: 0.82, whiteSpace: 'normal' }}
+      style={{ letterSpacing: '-0.04em', lineHeight: 1.05, whiteSpace: 'normal' }}
     >
       {lines.map((line, lineIndex) => {
         const lineStartIndex = globalIndex
@@ -52,7 +52,6 @@ export function AnimatedHeading({ text, className }: { text: string; className?:
             key={lineIndex}
             className="block"
             style={{
-              marginBottom: lineIndex < lines.length - 1 ? '0.04em' : 0,
               whiteSpace: 'nowrap',
             }}
           >
