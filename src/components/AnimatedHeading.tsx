@@ -18,8 +18,8 @@ export function AnimatedHeading({ text }: { text: string }) {
 
   return (
     <h1
-      className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal mb-4"
-      style={{ letterSpacing: '-0.04em' }}
+      className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal mb-4 max-w-[1100px]"
+      style={{ letterSpacing: '-0.04em', lineHeight: 0.9 }}
     >
       {lines.map((line, lineIndex) => {
         const lineStartIndex = globalIndex
