@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Circle, Globe, GitFork, Eye, EyeOff } from 'lucide-react'
+import { Circle } from 'lucide-react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 10 },
@@ -36,43 +36,94 @@ function StepItem({ number, text, active }: { number: number; text: string; acti
   )
 }
 
-function SocialButton({ icon: Icon, label }: { icon: typeof Globe; label: string }) {
-  return (
-    <button className="flex items-center justify-center gap-2.5 rounded-xl border border-white/10 bg-black px-4 py-3 text-sm font-medium text-white transition-colors hover:bg-white/5 cursor-pointer">
-      <Icon className="h-4 w-4" />
-      {label}
-    </button>
-  )
-}
-
 function InputGroup({
   label,
   placeholder,
   type = 'text',
-  children,
+  value,
+  onChange,
+  multiline = false,
 }: {
   label: string
   placeholder: string
   type?: string
-  children?: React.ReactNode
+  value: string
+  onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+  multiline?: boolean
 }) {
   return (
     <div className="space-y-2">
       <label className="text-sm font-medium text-white">{label}</label>
       <div className="relative">
-        <input
-          type={type}
-          placeholder={placeholder}
-          className="h-11 w-full rounded-xl border-none bg-brand-gray px-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-white/20"
-        />
-        {children}
+        {multiline ? (
+          <textarea
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder}
+            rows={5}
+            className="min-h-[120px] w-full rounded-xl border-none bg-brand-gray px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-white/20"
+          />
+        ) : (
+          <input
+            type={type}
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder}
+            className="h-11 w-full rounded-xl border-none bg-brand-gray px-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-white/20"
+          />
+        )}
       </div>
     </div>
   )
 }
 
 export function AuroraSignUp() {
-  const [showPassword, setShowPassword] = useState(false)
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    project: '',
+    message: '',
+  })
+
+  const handleChange = (
+    field: keyof typeof formData,
+  ) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((current) => ({ ...current, [field]: event.target.value }))
+  }
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    const requiredFields = [
+      formData.firstName.trim(),
+      formData.lastName.trim(),
+      formData.email.trim(),
+      formData.project.trim(),
+      formData.message.trim(),
+    ]
+
+    if (requiredFields.some((field) => !field)) {
+      window.alert('Please fill in all fields before sending your inquiry.')
+      return
+    }
+
+    const clientName = [formData.firstName, formData.lastName].filter(Boolean).join(' ') || 'Client'
+    const subject = encodeURIComponent(`Project inquiry from ${clientName}`)
+    const body = encodeURIComponent(
+      [
+        `Name: ${clientName}`,
+        `Email: ${formData.email || 'Not provided'}`,
+        `Project: ${formData.project || 'Not provided'}`,
+        '',
+        'Project details:',
+        formData.message || 'No additional details provided.',
+      ].join('\n'),
+    )
+
+    const recipient = 'viveksuvarna063@gmail.com'
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`
+  }
 
   return (
     <section className="px-2 lg:px-4 py-2 lg:py-4">
@@ -105,16 +156,16 @@ export function AuroraSignUp() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="space-y-3">
-              <h2 className="text-4xl font-medium tracking-tight whitespace-nowrap">Join BuildForge Labs</h2>
+              <h2 className="text-4xl font-medium tracking-tight whitespace-nowrap">Let&apos;s Build Something Useful</h2>
               <p className="text-sm leading-relaxed text-white/60 px-0">
-                Follow these 3 quick phases to activate your space.
+                Share a little about your project, the technology involved, and the support you&apos;re looking for.
               </p>
             </motion.div>
 
             <motion.div variants={fadeUp} className="space-y-3">
-              <StepItem number={1} text="Register your identity" active />
-              <StepItem number={2} text="Configure your studio" />
-              <StepItem number={3} text="Finalize your profile" />
+              <StepItem number={1} text="Share the brief" active />
+              <StepItem number={2} text="Scope the build" />
+              <StepItem number={3} text="Plan delivery" />
             </motion.div>
           </motion.div>
         </div>
@@ -130,65 +181,66 @@ export function AuroraSignUp() {
           >
             {/* Header */}
             <div className="space-y-2">
-              <h1 className="text-3xl font-medium tracking-tight">Create New Profile</h1>
-              <p className="text-sm text-white/40">Input your basic details to begin the journey.</p>
-            </div>
-
-            {/* Social Buttons */}
-            <div className="grid grid-cols-2 gap-4">
-              <SocialButton icon={Globe} label="Google" />
-              <SocialButton icon={GitFork} label="Github" />
-            </div>
-
-            {/* Divider */}
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-white/10" />
-              </div>
-              <div className="relative flex justify-center">
-                <span className="bg-black px-4 text-xs font-medium uppercase tracking-widest text-white/40">
-                  Or
-                </span>
-              </div>
+              <h1 className="text-3xl font-medium tracking-tight">Tell me about your project</h1>
+              <p className="text-sm text-white/40">Share a few details and I&apos;ll get in touch to talk through the work.</p>
             </div>
 
             {/* Form */}
-            <div className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-2 gap-4">
-                <InputGroup label="First Name" placeholder="John" />
-                <InputGroup label="Last Name" placeholder="Doe" />
-              </div>
-
-              <InputGroup label="Email" placeholder="john@aurora.dev" type="email" />
-
-              <div className="space-y-1.5">
                 <InputGroup
-                  label="Password"
-                  placeholder="Min. 8 symbols"
-                  type={showPassword ? 'text' : 'password'}
-                >
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors cursor-pointer"
-                  >
-                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                  </button>
-                </InputGroup>
-                <p className="text-xs text-white/30 pl-1">Requires at least 8 symbols.</p>
+                  label="First Name"
+                  placeholder="John"
+                  value={formData.firstName}
+                  onChange={handleChange('firstName')}
+                />
+                <InputGroup
+                  label="Last Name"
+                  placeholder="Doe"
+                  value={formData.lastName}
+                  onChange={handleChange('lastName')}
+                />
               </div>
-            </div>
 
-            {/* Submit */}
-            <button className="mt-4 h-14 w-full rounded-xl bg-white font-semibold text-black transition-all hover:bg-white/90 active:scale-[0.98] cursor-pointer">
-              Create Account
-            </button>
+              <InputGroup
+                label="Email"
+                placeholder="Email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange('email')}
+              />
+
+              <InputGroup
+                label="Project or Company"
+                placeholder="What are you building?"
+                value={formData.project}
+                onChange={handleChange('project')}
+              />
+
+              <InputGroup
+                label="Project Brief"
+                placeholder="Tell me about the app, the technology involved, and the support you're looking for."
+                value={formData.message}
+                onChange={handleChange('message')}
+                multiline
+              />
+
+              <button
+                type="submit"
+                className="mt-4 h-14 w-full rounded-xl bg-white font-semibold text-black transition-all hover:bg-white/90 active:scale-[0.98] cursor-pointer"
+              >
+                Send Inquiry
+              </button>
+            </form>
 
             {/* Footer */}
             <p className="text-center text-sm text-white/40">
-              Member of the team?{' '}
-              <a href="#" className="text-white underline underline-offset-2 hover:text-white/80">
-                Log in
+              Prefer a different way to start?{' '}
+              <a
+                href="mailto:viveksuvarna063@gmail.com?subject=Project%20Inquiry"
+                className="text-white underline underline-offset-2 hover:text-white/80"
+              >
+                Let&apos;s talk
               </a>
             </p>
           </motion.div>

@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect, type ReactElement } from 'react';
+import React, { useState, useRef, useLayoutEffect, type ReactElement } from 'react';
 
 export type NavItem = {
   id: string | number;
@@ -65,14 +65,13 @@ export const LimelightNav = ({
           onClick={() => handleItemClick(index, onClick)}
           aria-label={label}
         >
-          {
-            // @ts-expect-error cloneElement className merge
-            cloneElement(icon, {
-              className: `w-5 h-5 transition-opacity duration-200 ease-in-out ${
-                activeIndex === index ? 'opacity-100' : 'opacity-40'
-              } ${(icon.props as { className?: string }).className || ''} ${iconClassName || ''}`,
-            })
-          }
+          {React.isValidElement(icon)
+            ? React.cloneElement(icon, {
+                className: `w-5 h-5 transition-opacity duration-200 ease-in-out ${
+                  activeIndex === index ? 'opacity-100' : 'opacity-40'
+                } ${(icon.props as { className?: string }).className || ''} ${iconClassName || ''}`,
+              })
+            : icon}
         </a>
       ))}
 

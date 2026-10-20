@@ -16,22 +16,22 @@ function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 
-const navItems = [
-  { id: 'hero', icon: <Home />, label: 'Home', onClick: () => scrollTo('hero') },
-  { id: 'products', icon: <Boxes />, label: 'Products', onClick: () => scrollTo('products') },
-  { id: 'vision', icon: <Eye />, label: 'Vision', onClick: () => scrollTo('vision') },
-  { id: 'process', icon: <GitBranch />, label: 'Process', onClick: () => scrollTo('process') },
-  { id: 'faq', icon: <HelpCircle />, label: 'FAQ', onClick: () => scrollTo('faq') },
-]
-
-const footerLinks = [
-  { label: 'Products', target: 'products' },
-  { label: 'Why BFL', target: 'why-bfl' },
-  { label: 'Vision', target: 'vision' },
-  { label: 'FAQ', target: 'faq' },
-]
-
 function App() {
+  const navItems = [
+    { id: 'hero', icon: <Home />, label: 'Home', onClick: () => scrollTo('hero') },
+    { id: 'products', icon: <Boxes />, label: 'Work', onClick: () => scrollTo('products') },
+    { id: 'vision', icon: <Eye />, label: 'Services', onClick: () => scrollTo('vision') },
+    { id: 'process', icon: <GitBranch />, label: 'Process', onClick: () => scrollTo('process') },
+    { id: 'faq', icon: <HelpCircle />, label: 'FAQ', onClick: () => scrollTo('faq') },
+  ]
+
+  const footerLinks = [
+    { label: 'Work', target: 'products' },
+    { label: 'Why BFL', target: 'why-bfl' },
+    { label: 'Services', target: 'vision' },
+    { label: 'FAQ', target: 'faq' },
+  ]
+
   return (
     <div className="bg-black text-white">
       {/* Hero Section */}
@@ -65,7 +65,7 @@ function App() {
                 className="bg-white text-black px-6 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors"
                 onClick={() => scrollTo('signup')}
               >
-                Sign Up
+                Let&apos;s Talk
               </button>
             </div>
           </nav>
@@ -73,10 +73,10 @@ function App() {
           <div className="flex-1 flex flex-col justify-end px-6 md:px-12 lg:px-16 pb-12 lg:pb-16">
             <div className="lg:grid lg:grid-cols-2 lg:items-end">
               <div>
-                <AnimatedHeading text={"Shaping tomorrow\nwith vision and action."} />
+                <AnimatedHeading text={"Your next software project,\nbuilt and shipped."} />
                 <FadeIn delay={800} duration={1000}>
                   <p className="text-base md:text-lg text-gray-300 mb-5">
-                    We back visionaries and craft ventures that define what comes next.
+                    I help software agencies and startups build web applications, mobile apps, backend APIs, and integrations through focused, project-based development.
                   </p>
                 </FadeIn>
                 <FadeIn delay={1200} duration={1000}>
@@ -85,13 +85,13 @@ function App() {
                       className="bg-white text-black px-8 py-3 rounded-lg font-medium"
                       onClick={() => scrollTo('signup')}
                     >
-                      Get Started
+                      Discuss a Project
                     </button>
                     <button
                       className="liquid-glass border border-white/20 text-white px-8 py-3 rounded-lg font-medium transition-colors hover:bg-white hover:text-black"
                       onClick={() => scrollTo('products')}
                     >
-                      Explore Now
+                      View Selected Work
                     </button>
                   </div>
                 </FadeIn>
@@ -101,7 +101,7 @@ function App() {
                 <FadeIn delay={1400} duration={1000}>
                   <div className="liquid-glass border border-white/20 px-6 py-3 rounded-xl">
                     <span className="text-lg md:text-xl lg:text-2xl font-light">
-                      Investing. Building. Advisory.
+                      Designing. Developing. Delivering.
                     </span>
                   </div>
                 </FadeIn>
@@ -145,7 +145,7 @@ function App() {
                   </a>
                 ))}
               </div>
-              <span className="text-sm text-gray-600">&copy; 2026 BuildForge Labs</span>
+              <span className="text-sm text-gray-600">&copy; 2026 BuildForgeLabs</span>
             </div>
           </ScrollReveal>
         </div>

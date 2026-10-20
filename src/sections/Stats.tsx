@@ -3,10 +3,10 @@ import { ScrollReveal } from '../components/ScrollReveal'
 import { AnimatedCounter } from '../components/AnimatedCounter'
 
 const stats = [
-  { value: 12, suffix: '+', label: 'Projects Built', accent: 'rgba(139, 92, 246, 0.4)' },
-  { value: 6, suffix: '', label: 'Active Products', accent: 'rgba(59, 130, 246, 0.4)' },
-  { value: 18, suffix: '+', label: 'Technologies Used', accent: 'rgba(20, 184, 166, 0.4)' },
-  { value: 9, suffix: '', label: 'Ideas in Development', accent: 'rgba(245, 158, 11, 0.4)' },
+  { value: 12, suffix: '+', label: 'Product builds', accent: 'rgba(139, 92, 246, 0.4)' },
+  { value: 6, suffix: '', label: 'Core delivery areas', accent: 'rgba(59, 130, 246, 0.4)' },
+  { value: 18, suffix: '+', label: 'Tools & integrations', accent: 'rgba(20, 184, 166, 0.4)' },
+  { value: 9, suffix: '', label: 'Project workflows', accent: 'rgba(245, 158, 11, 0.4)' },
 ]
 
 export function Stats() {

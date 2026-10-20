@@ -5,7 +5,7 @@ export function Vision() {
         className="text-white text-3xl sm:text-4xl md:text-5xl font-light text-center mb-12 sm:mb-24"
         style={{ letterSpacing: '-0.04em' }}
       >
-        Our Vision
+        Building software that moves ideas forward.
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 max-w-[1400px] mx-auto">
@@ -14,13 +14,12 @@ export function Vision() {
           <div className="absolute top-1/2 -translate-y-1/2 -left-[420px] h-[460px] w-[460px] rounded-full bg-[#1e3a8a] blur-3xl opacity-40" />
           <div className="relative z-10 flex flex-col h-full">
             <h3 className="text-white text-xl sm:text-2xl font-light leading-tight">
-              Building the Next
+              Turning requirements
               <br />
-              Generation of Digital Tools
+              into working products
             </h3>
             <p className="mt-12 sm:mt-20 text-[13px] sm:text-[14px] leading-relaxed text-white/70 font-light max-w-[280px]">
-              BuildForge Labs aims to create a portfolio of products that empower
-              creators, students, developers, and businesses through technology.
+              I help teams shape ideas into software that is clear, practical, and aligned with the real problem being solved.
             </p>
           </div>
         </div>
@@ -44,9 +43,9 @@ export function Vision() {
           </div>
           <div className="flex-1 flex items-center justify-start p-6 sm:p-8">
             <h3 className="text-white text-xl sm:text-2xl font-light leading-tight text-left">
-              Empowering Creators
+              Useful software,
               <br />
-              Through Technology
+              built with intention
             </h3>
           </div>
         </div>
@@ -56,13 +55,12 @@ export function Vision() {
           <div className="absolute -top-28 -right-28 h-56 w-56 rounded-full bg-[#1e3a8a] blur-3xl opacity-40" />
           <div className="relative z-10 flex flex-col h-full">
             <h3 className="text-white text-xl sm:text-2xl font-light leading-tight">
-              Software That
+              Thoughtful engineering
               <br />
-              Genuinely Improves
+              and delivery
             </h3>
             <p className="mt-auto text-[13px] sm:text-[14px] leading-relaxed text-white/70 font-light max-w-[320px]">
-              The focus is not on building more software, but on building software
-              that genuinely improves productivity and learning.
+              The goal is to build software that solves the right problem, supports the workflow, and remains maintainable as the product evolves.
             </p>
           </div>
         </div>

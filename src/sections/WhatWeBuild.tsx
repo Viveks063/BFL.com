@@ -48,7 +48,7 @@ function GlowFeatureCard({ title, description, icon, gradient, delay }: GlowFeat
 const cards = [
   {
     title: 'Developer Tools',
-    description: 'Tools that help developers build, deploy, and manage projects faster.',
+    description: 'Practical tooling for teams shipping products faster with cleaner delivery workflows and deployment automation.',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <polyline points="16 18 22 12 16 6" />
@@ -60,7 +60,7 @@ const cards = [
   },
   {
     title: 'Productivity Tools',
-    description: 'Applications designed to save time and improve workflows.',
+    description: 'Applications and workflows designed to reduce manual work, improve coordination, and keep day-to-day operations moving.',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -71,7 +71,7 @@ const cards = [
   },
   {
     title: 'Utility Applications',
-    description: 'Simple yet powerful tools used daily by students, creators, and professionals.',
+    description: 'Focused web and mobile utilities that turn routine work into cleaner, more reliable experiences for real users.',
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="2" width="20" height="20" rx="2" />
@@ -95,9 +95,9 @@ export function WhatWeBuild() {
       <GradientOrbs />
       <div className="relative z-10">
         <SectionHeading
-          label="What We Build"
-          title="Products that move things forward."
-          description="From AI-powered tools to developer utilities, we build software that solves real problems."
+          label="Selected Work"
+          title="Selected Work & Capabilities"
+          description="A look at the applications, integrations, and engineering work behind the products I help build."
           gradient
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-6 lg:gap-4 w-full max-w-[960px] mx-auto">

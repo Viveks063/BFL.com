@@ -19,13 +19,10 @@ function FeatureCard({ title, description, icon, gradient, delay }: FeatureCardP
       transition={{ duration: 0.8, ease: 'easeOut', delay }}
       className="relative flex flex-col justify-start items-start w-full max-w-[260px] md:max-w-[300px] group mx-auto"
     >
-      {/* Glow Background */}
       <div
         className="absolute inset-0 w-full h-[260px] md:h-[300px] opacity-60 rounded-[40px] pointer-events-none"
         style={{ background: gradient, filter: 'blur(45px)' }}
       />
-
-      {/* Foreground Card with Gradient Border */}
       <div
         className="self-stretch h-[260px] md:h-[300px] rounded-[40px] z-10 overflow-hidden"
         style={{
@@ -33,7 +30,6 @@ function FeatureCard({ title, description, icon, gradient, delay }: FeatureCardP
           background: `linear-gradient(#1A1A1C, #1A1A1C) padding-box, ${gradient} border-box`,
         }}
       >
-        {/* Content */}
         <div className="w-full h-full p-7 flex flex-col justify-between">
           <div className="text-white/90">{icon}</div>
           <div>

@@ -6,26 +6,26 @@ import { Spotlight } from '@/components/ui/spotlight'
 
 const features = [
   {
-    title: 'Built for Real Problems',
-    description: 'Every product solves a practical challenge. No vanity projects — only tools people actually need.',
+    title: 'Practical engineering',
+    description: 'The work starts with the actual requirement, the workflow, and the problem being solved.',
     number: '01',
     accent: 'rgba(139, 92, 246, 0.4)',
   },
   {
-    title: 'Modern Technology',
-    description: 'Built using cutting-edge AI and web technologies. Always current, always improving.',
+    title: 'Clear scope and delivery',
+    description: 'Project goals, milestones, and deliverables are aligned early so the build stays focused.',
     number: '02',
     accent: 'rgba(59, 130, 246, 0.4)',
   },
   {
-    title: 'Performance First',
-    description: 'Fast, scalable, and optimized experiences. Speed is a feature, not an afterthought.',
+    title: 'Direct communication',
+    description: 'I keep the work transparent and collaborative throughout implementation, review, and iteration.',
     number: '03',
     accent: 'rgba(20, 184, 166, 0.4)',
   },
   {
-    title: 'Continuous Innovation',
-    description: 'New ideas and products are constantly being developed. We ship fast and iterate faster.',
+    title: 'Maintainable code',
+    description: 'The goal is not just shipping features, but building software that is easier to extend and hand over.',
     number: '04',
     accent: 'rgba(245, 158, 11, 0.4)',
   },
@@ -36,8 +36,8 @@ export function WhyBFL() {
     <section className="relative px-6 md:px-12 lg:px-16 py-24 lg:py-32 overflow-hidden">
       <div className="relative z-10">
         <SectionHeading
-          label="Why BuildForge Labs"
-          title="Built different, by design."
+          label="Why BuildForgeLabs"
+          title="Practical engineering, clear delivery."
           gradient
         />
 
@@ -56,21 +56,19 @@ export function WhyBFL() {
                   className="text-3xl md:text-4xl lg:text-5xl font-normal gradient-text mb-4"
                   style={{ letterSpacing: '-0.04em' }}
                 >
-                  We build with purpose
+                  Focused on useful software
                 </h3>
                 <p className="text-gray-400 max-w-lg leading-relaxed mb-6">
-                  Every tool we create starts with a real problem. We combine cutting-edge
-                  technology with thoughtful design to build products that genuinely make
-                  a difference.
+                  I work with agencies, founders, and product teams to turn requirements into practical software that is easier to ship, easier to maintain, and easier to hand over.
                 </p>
                 <div className="flex gap-6">
                   <div>
-                    <div className="text-2xl font-medium">12+</div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wider">Products</div>
+                    <div className="text-2xl font-medium">Scope</div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider">Project-based</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-medium">18+</div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wider">Technologies</div>
+                    <div className="text-2xl font-medium">Delivery</div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider">Build & handover</div>
                   </div>
                 </div>
               </div>

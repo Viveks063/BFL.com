@@ -20,21 +20,21 @@ export function CTA() {
                 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal mb-5 gradient-text"
                 style={{ letterSpacing: '-0.04em' }}
               >
-                Let's Build Something Amazing
+                Have a project in mind?
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={350} animation="fade-up">
               <p className="text-base md:text-lg text-gray-300 mb-10 max-w-xl mx-auto">
-                Exploring ideas, building products, and shaping the future through technology.
+                Tell me what you're building, what support you need, and where you'd like to take the project.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={500} animation="fade-up">
               <div className="flex flex-wrap justify-center gap-4">
                 <button className="bg-white text-black px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-gray-100 hover:scale-105 active:scale-95">
-                  Explore Products
+                  Discuss Your Project
                 </button>
                 <button className="liquid-glass border border-white/20 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 active:scale-95">
-                  Contact Us
+                  View Selected Work
                 </button>
               </div>
             </ScrollReveal>

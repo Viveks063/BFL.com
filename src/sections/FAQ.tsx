@@ -4,24 +4,24 @@ import { ScrollReveal } from '../components/ScrollReveal'
 
 const faqs = [
   {
-    q: 'What is BuildForge Labs?',
-    a: 'BuildForge Labs is a digital innovation studio focused on building practical, AI-powered, and productivity-focused web products that help people create, learn, work, and grow faster.',
+    q: 'What kinds of projects can you help with?',
+    a: 'I can support web applications, mobile apps, backend APIs, dashboards, internal tools, and integration work for agencies, startups, and product teams.',
   },
   {
-    q: 'What kinds of products do you build?',
-    a: 'We build AI applications, developer tools, productivity tools, educational platforms, utility applications, and experimental projects — all designed to solve real-world problems.',
+    q: 'Can you work with an existing development team?',
+    a: 'Yes. I can support a current team with implementation, integration work, API development, frontend or backend tasks, and delivery support alongside your existing process.',
   },
   {
-    q: 'Are the tools free?',
-    a: 'Many of our tools offer free tiers. Some products have premium features for power users and teams. We believe in accessible technology.',
+    q: 'Can you contribute to an existing codebase?',
+    a: 'Yes. I can join an active codebase, understand the current architecture, and help implement features, fix issues, and improve the quality of the work without disrupting the existing setup.',
   },
   {
-    q: 'Do you offer custom solutions?',
-    a: 'Yes. We work with select partners to build custom AI-powered tools and applications tailored to specific business needs and workflows.',
+    q: 'How does a project engagement begin?',
+    a: 'We start by understanding the requirement, the technical context, and the outcome you want. From there we agree on scope, deliverables, milestones, and the work to be built.',
   },
   {
-    q: 'How can I stay updated?',
-    a: 'Follow us on social media or subscribe to our newsletter for the latest product launches, updates, and insights from the studio.',
+    q: 'Can you help with APIs, integrations, and deployment?',
+    a: 'Yes. I can assist with API development, database or Firebase integrations, third-party services, deployment automation, and handover support when those tasks are included in the agreed scope.',
   },
 ]
 
