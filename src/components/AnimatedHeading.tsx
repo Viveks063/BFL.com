@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
+import { cn } from '@/lib/utils'
 
 const CHAR_DELAY = 30
 const INITIAL_DELAY = 200
 const TRANSITION_MS = 500
 
-export function AnimatedHeading({ text }: { text: string }) {
+export function AnimatedHeading({ text, className }: { text: string; className?: string }) {
   const [animate, setAnimate] = useState(false)
 
   useEffect(() => {
@@ -18,8 +19,11 @@ export function AnimatedHeading({ text }: { text: string }) {
 
   return (
     <h1
-      className="font-normal mb-4 max-w-[1400px] leading-[0.7] text-[clamp(3.2rem,5vw,7.2rem)] md:text-[clamp(4rem,6vw,9rem)] lg:text-[clamp(5rem,6.5vw,10.5rem)]"
-      style={{ letterSpacing: '-0.06em', whiteSpace: 'normal' }}
+      className={cn(
+        "font-normal mb-4 max-w-[1000px] leading-[0.95] text-[clamp(2.2rem,3.4vw,4rem)] md:text-[clamp(2.6rem,3.8vw,4.8rem)] lg:text-[clamp(2.8rem,3.8vw,5.2rem)]",
+        className
+      )}
+      style={{ letterSpacing: '-0.04em', whiteSpace: 'normal' }}
     >
       {lines.map((line, lineIndex) => {
         const lineStartIndex = globalIndex
@@ -48,7 +52,7 @@ export function AnimatedHeading({ text }: { text: string }) {
             key={lineIndex}
             className="block"
             style={{
-              marginBottom: lineIndex < lines.length - 1 ? '0.42em' : 0,
+              marginBottom: lineIndex < lines.length - 1 ? '0.22em' : 0,
               whiteSpace: 'nowrap',
             }}
           >
