@@ -18,8 +18,8 @@ export function AnimatedHeading({ text }: { text: string }) {
 
   return (
     <h1
-      className="font-normal mb-4 max-w-[1200px] leading-[0.78] text-[clamp(4.2rem,7vw,9.5rem)] md:text-[clamp(5rem,8vw,12rem)] lg:text-[clamp(6rem,8vw,14rem)]"
-      style={{ letterSpacing: '-0.06em' }}
+      className="font-normal mb-4 max-w-[1400px] leading-[0.7] text-[clamp(3.2rem,5vw,7.2rem)] md:text-[clamp(4rem,6vw,9rem)] lg:text-[clamp(5rem,6.5vw,10.5rem)]"
+      style={{ letterSpacing: '-0.06em', whiteSpace: 'normal' }}
     >
       {lines.map((line, lineIndex) => {
         const lineStartIndex = globalIndex
@@ -44,7 +44,14 @@ export function AnimatedHeading({ text }: { text: string }) {
           )
         })
         return (
-          <span key={lineIndex} className="block">
+          <span
+            key={lineIndex}
+            className="block"
+            style={{
+              marginBottom: lineIndex < lines.length - 1 ? '0.42em' : 0,
+              whiteSpace: 'nowrap',
+            }}
+          >
             {chars}
           </span>
         )
