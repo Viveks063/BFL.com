@@ -206,7 +206,7 @@ export function AuroraSignUp() {
   return (
     <section className="px-2 lg:px-4 py-2 lg:py-4">
       <main className="flex min-h-screen w-full rounded-2xl overflow-hidden bg-black selection:bg-white/30 lg:h-screen lg:overflow-hidden">
-        {/* Left Column — Hero */}
+        {/* Left Column - Hero */}
         <div className="relative hidden w-[52%] flex-col items-center justify-end pb-32 px-12 rounded-3xl overflow-hidden shadow-2xl lg:flex">
           <video
             className="absolute inset-0 h-full w-full object-cover"
@@ -236,7 +236,7 @@ export function AuroraSignUp() {
             <motion.div variants={fadeUp} className="space-y-3">
               <h2 className="text-4xl font-medium tracking-tight whitespace-nowrap">Let&apos;s Build Something Great</h2>
               <p className="text-sm leading-relaxed text-white/60 px-0">
-                Share a little about your project — whether it&apos;s a web platform, iOS/Android mobile app, AI integration, or AWS cloud infrastructure.
+                Share a little about your project - whether it&apos;s a web platform, iOS/Android mobile app, AI integration, or AWS cloud infrastructure.
               </p>
             </motion.div>
 
@@ -248,7 +248,7 @@ export function AuroraSignUp() {
           </motion.div>
         </div>
 
-        {/* Right Column — Form */}
+        {/* Right Column - Form */}
         <div className="flex flex-1 flex-col items-center justify-center overflow-y-auto px-4 py-12 sm:px-12 lg:overflow-hidden lg:px-16 lg:py-6 xl:px-24">
           <motion.div
             className="w-full max-w-xl space-y-8 lg:space-y-6 sm:space-y-10"

@@ -73,7 +73,7 @@ export function WhyBFL() {
                 </div>
               </div>
 
-              {/* Right — 3D Scene */}
+              {/* Right - 3D Scene */}
               <div className="flex-1 relative">
                 <SplineScene
                   scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"

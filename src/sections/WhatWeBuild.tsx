@@ -90,7 +90,7 @@ const cards: GlowFeatureCardProps[] = [
   {
     title: 'DevOps & CI/CD Pipelines',
     category: 'DevOps',
-    description: 'Automated continuous integration and delivery pipelines with GitHub Actions and GitLab CI — automated test execution, Docker containerization, and zero-downtime shipping.',
+    description: 'Automated continuous integration and delivery pipelines with GitHub Actions and GitLab CI - automated test execution, Docker containerization, and zero-downtime shipping.',
     icon: <GitBranch className="w-6 h-6 text-blue-400" />,
     gradient: 'linear-gradient(137deg, #3B82F6 0%, #60A5FA 45%, #06B6D4 100%)',
     delay: 0.3,
@@ -98,7 +98,7 @@ const cards: GlowFeatureCardProps[] = [
   {
     title: 'AWS & Cloud Architecture',
     category: 'Cloud',
-    description: 'Production-ready cloud environments on AWS — scalable VPCs, EC2, ECS container clusters, Lambda serverless, S3, RDS, CloudFront CDN, and Terraform IaC automation.',
+    description: 'Production-ready cloud environments on AWS - scalable VPCs, EC2, ECS container clusters, Lambda serverless, S3, RDS, CloudFront CDN, and Terraform IaC automation.',
     icon: <Cloud className="w-6 h-6 text-amber-400" />,
     gradient: 'linear-gradient(137deg, #F59E0B 0%, #FCD34D 45%, #F97316 100%)',
     delay: 0.35,

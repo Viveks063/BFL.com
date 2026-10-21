@@ -25,7 +25,7 @@ export function CTA() {
             </ScrollReveal>
             <ScrollReveal delay={350} animation="fade-up">
               <p className="text-base md:text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
-                Whether you need modern web apps, mobile development, intelligent AI applications, or resilient AWS cloud &amp; DevOps pipelines — let&apos;s build something great.
+                Whether you need modern web apps, mobile development, intelligent AI applications, or resilient AWS cloud &amp; DevOps pipelines - let&apos;s build something great.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={500} animation="fade-up">

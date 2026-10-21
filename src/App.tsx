@@ -76,7 +76,7 @@ function App() {
                 <AnimatedHeading text={"Your next software\nproject,\nbuilt and shipped."} />
                 <FadeIn delay={800} duration={1000}>
                   <p className="text-base md:text-lg text-gray-300 mb-5 max-w-xl leading-relaxed">
-                    I build high-performance web applications, iOS & Android mobile apps, intelligent AI applications, and robust backend architectures — fully backed by scalable AWS cloud infrastructure and automated DevOps CI/CD pipelines.
+                    I build high-performance web applications, iOS & Android mobile apps, intelligent AI applications, and robust backend architectures - fully backed by scalable AWS cloud infrastructure and automated DevOps CI/CD pipelines.
                   </p>
                 </FadeIn>
                 <FadeIn delay={1200} duration={1000}>
