@@ -19,7 +19,7 @@ function scrollTo(id: string) {
 function App() {
   const navItems = [
     { id: 'hero', icon: <Home />, label: 'Home', onClick: () => scrollTo('hero') },
-    { id: 'products', icon: <Boxes />, label: 'Work', onClick: () => scrollTo('products') },
+    { id: 'products', icon: <Boxes />, label: 'Capabilities', onClick: () => scrollTo('products') },
     { id: 'vision', icon: <Eye />, label: 'Services', onClick: () => scrollTo('vision') },
     { id: 'process', icon: <GitBranch />, label: 'Process', onClick: () => scrollTo('process') },
     { id: 'faq', icon: <HelpCircle />, label: 'FAQ', onClick: () => scrollTo('faq') },
@@ -75,34 +75,50 @@ function App() {
               <div>
                 <AnimatedHeading text={"Your next software\nproject,\nbuilt and shipped."} />
                 <FadeIn delay={800} duration={1000}>
-                  <p className="text-base md:text-lg text-gray-300 mb-5">
-                    I help software agencies and startups build web applications, mobile apps, backend APIs, and integrations through focused, project-based development.
+                  <p className="text-base md:text-lg text-gray-300 mb-5 max-w-xl">
+                    I help software agencies and startups build full-stack web applications, resilient AWS cloud infrastructure, automated CI/CD pipelines, and DevOps workflows engineered for speed and reliability.
                   </p>
                 </FadeIn>
                 <FadeIn delay={1200} duration={1000}>
                   <div className="flex flex-wrap gap-4">
                     <button
-                      className="bg-white text-black px-8 py-3 rounded-lg font-medium"
+                      className="bg-white text-black px-8 py-3 rounded-lg font-medium cursor-pointer transition-all hover:bg-gray-100 active:scale-95"
                       onClick={() => scrollTo('signup')}
                     >
                       Discuss a Project
                     </button>
                     <button
-                      className="liquid-glass border border-white/20 text-white px-8 py-3 rounded-lg font-medium transition-colors hover:bg-white hover:text-black"
+                      className="liquid-glass border border-white/20 text-white px-8 py-3 rounded-lg font-medium transition-all hover:bg-white hover:text-black cursor-pointer active:scale-95"
                       onClick={() => scrollTo('products')}
                     >
-                      View Selected Work
+                      Explore Capabilities
                     </button>
+                  </div>
+
+                  {/* DevOps & Cloud Badges */}
+                  <div className="mt-6 flex flex-wrap items-center gap-2 text-xs text-gray-300">
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">AWS Cloud</span>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">DevOps</span>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">CI/CD Pipelines</span>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">Docker & IaC</span>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">Automated Deployments</span>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">Full-Stack & APIs</span>
                   </div>
                 </FadeIn>
               </div>
 
-              <div className="flex items-end justify-start lg:justify-end mt-8 lg:mt-0">
+              <div className="flex flex-col items-start lg:items-end justify-start lg:justify-end mt-8 lg:mt-0 gap-3">
                 <FadeIn delay={1400} duration={1000}>
                   <div className="liquid-glass border border-white/20 px-6 py-3 rounded-xl">
                     <span className="text-lg md:text-xl lg:text-2xl font-light">
-                      Designing. Developing. Delivering.
+                      Engineering. Cloud. Automation.
                     </span>
+                  </div>
+                </FadeIn>
+                <FadeIn delay={1600} duration={1000}>
+                  <div className="flex items-center gap-2 text-xs text-gray-400 px-2">
+                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>AWS Architecture • Automated CI/CD • Zero Downtime</span>
                   </div>
                 </FadeIn>
               </div>

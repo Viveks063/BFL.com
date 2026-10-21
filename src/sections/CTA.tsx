@@ -24,8 +24,8 @@ export function CTA() {
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={350} animation="fade-up">
-              <p className="text-base md:text-lg text-gray-300 mb-10 max-w-xl mx-auto">
-                Tell me what you're building, what support you need, and where you'd like to take the project.
+              <p className="text-base md:text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+                Whether you need scalable AWS cloud architecture, automated CI/CD pipelines, containerization, or full-stack software development — let&apos;s build something great.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={500} animation="fade-up">
@@ -40,7 +40,7 @@ export function CTA() {
                   onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
                   className="liquid-glass border border-white/20 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 active:scale-95 cursor-pointer"
                 >
-                  View Selected Work
+                  Explore Capabilities
                 </button>
               </div>
             </ScrollReveal>

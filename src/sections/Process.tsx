@@ -3,11 +3,11 @@ import { SectionHeading } from '../components/SectionHeading'
 import { GradientOrbs } from '../components/GradientOrbs'
 
 const steps = [
-  { number: '01', title: 'Understand the requirement', description: 'Clarify the goal, the user or business need, and the outcome you want to achieve.' },
-  { number: '02', title: 'Align scope and milestones', description: 'Define the deliverables, priorities, and project boundaries before implementation begins.' },
-  { number: '03', title: 'Develop and review', description: 'Build the implementation with regular feedback and technical review throughout the process.' },
-  { number: '04', title: 'Test and refine', description: 'Check the work, resolve issues, and make sure the result matches the agreed scope.' },
-  { number: '05', title: 'Deliver and hand over', description: 'Provide the agreed code and assist with deployment or handover when that support is included in scope.' },
+  { number: '01', title: 'Understand requirements & architecture', description: 'Clarify business goals, technical stack, cloud dependencies, and the target infrastructure.' },
+  { number: '02', title: 'Scope roadmap & infrastructure design', description: 'Define deliverables, milestones, API contracts, AWS architecture, and pipeline specs.' },
+  { number: '03', title: 'Develop, architect & integrate', description: 'Build full-stack features, construct backend microservices, and provision cloud environments with regular code reviews.' },
+  { number: '04', title: 'Containerize, automate & test', description: 'Dockerize applications, build CI/CD test and linting workflows, and validate system performance.' },
+  { number: '05', title: 'Deploy, monitor & hand over', description: 'Execute zero-downtime production deployment, configure DNS/SSL, set up monitoring, and provide clean documentation.' },
 ]
 
 export function Process() {

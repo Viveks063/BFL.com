@@ -6,28 +6,28 @@ import { Spotlight } from '@/components/ui/spotlight'
 
 const features = [
   {
-    title: 'Practical engineering',
-    description: 'The work starts with the actual requirement, the workflow, and the problem being solved.',
+    title: 'AWS & Cloud Architecture',
+    description: 'Cost-optimized, scalable cloud architecture on AWS with high availability, secure VPCs, and automated scaling.',
     number: '01',
-    accent: 'rgba(139, 92, 246, 0.4)',
+    accent: 'rgba(245, 158, 11, 0.4)',
   },
   {
-    title: 'Clear scope and delivery',
-    description: 'Project goals, milestones, and deliverables are aligned early so the build stays focused.',
+    title: 'Automated CI/CD & Deployments',
+    description: 'End-to-end continuous integration and deployment pipelines using GitHub Actions and GitLab for zero-downtime shipping.',
     number: '02',
     accent: 'rgba(59, 130, 246, 0.4)',
   },
   {
-    title: 'Direct communication',
-    description: 'I keep the work transparent and collaborative throughout implementation, review, and iteration.',
+    title: 'Full-Stack Software Engineering',
+    description: 'Clean, maintainable web applications and backend APIs engineered to solve business problems and scale smoothly.',
     number: '03',
     accent: 'rgba(20, 184, 166, 0.4)',
   },
   {
-    title: 'Maintainable code',
-    description: 'The goal is not just shipping features, but building software that is easier to extend and hand over.',
+    title: 'Infrastructure as Code & Automation',
+    description: 'Automated provisioning with Terraform, Docker containerization, and scripts that turn complex manual ops into one-click commands.',
     number: '04',
-    accent: 'rgba(245, 158, 11, 0.4)',
+    accent: 'rgba(139, 92, 246, 0.4)',
   },
 ]
 
@@ -56,19 +56,19 @@ export function WhyBFL() {
                   className="text-3xl md:text-4xl lg:text-5xl font-normal gradient-text mb-4"
                   style={{ letterSpacing: '-0.04em' }}
                 >
-                  Focused on useful software
+                  Full-stack software & cloud infrastructure
                 </h3>
                 <p className="text-gray-400 max-w-lg leading-relaxed mb-6">
-                  I work with agencies, founders, and product teams to turn requirements into practical software that is easier to ship, easier to maintain, and easier to hand over.
+                  I work with agencies, founders, and product teams to build robust web applications, scalable AWS cloud infrastructure, automated CI/CD pipelines, and DevOps workflows that make releasing software predictable and fast.
                 </p>
                 <div className="flex gap-6">
                   <div>
-                    <div className="text-2xl font-medium">Scope</div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wider">Project-based</div>
+                    <div className="text-2xl font-medium">Cloud & DevOps</div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider">AWS & Automation</div>
                   </div>
                   <div>
                     <div className="text-2xl font-medium">Delivery</div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wider">Build & handover</div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider">Build, deploy & handover</div>
                   </div>
                 </div>
               </div>

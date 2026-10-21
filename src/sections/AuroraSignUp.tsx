@@ -236,14 +236,14 @@ export function AuroraSignUp() {
             <motion.div variants={fadeUp} className="space-y-3">
               <h2 className="text-4xl font-medium tracking-tight whitespace-nowrap">Let&apos;s Build Something Useful</h2>
               <p className="text-sm leading-relaxed text-white/60 px-0">
-                Share a little about your project, the technology involved, and the support you&apos;re looking for.
+                Share a little about your project, AWS or DevOps requirements, CI/CD automation, and the engineering support you need.
               </p>
             </motion.div>
 
             <motion.div variants={fadeUp} className="space-y-3">
               <StepItem number={1} text="Share the brief" active />
-              <StepItem number={2} text="Scope the build" />
-              <StepItem number={3} text="Plan delivery" />
+              <StepItem number={2} text="Architect & scope" />
+              <StepItem number={3} text="Build, deploy & automate" />
             </motion.div>
           </motion.div>
         </div>
@@ -260,7 +260,7 @@ export function AuroraSignUp() {
             {/* Header */}
             <div className="space-y-2">
               <h1 className="text-3xl font-medium tracking-tight">Tell me about your project</h1>
-              <p className="text-sm text-white/40">Share a few details and I&apos;ll get in touch to talk through the work.</p>
+              <p className="text-sm text-white/40">Share a few details and I&apos;ll get in touch to discuss your architecture, software build, or cloud requirements.</p>
             </div>
 
             {/* Form */}
@@ -293,7 +293,7 @@ export function AuroraSignUp() {
 
               <InputGroup
                 label="Project or Company"
-                placeholder="What are you building?"
+                placeholder="What are you building or deploying? (e.g., SaaS App, AWS Setup)"
                 value={formData.project}
                 onChange={handleChange('project')}
                 disabled={status === 'loading'}
@@ -301,7 +301,7 @@ export function AuroraSignUp() {
 
               <InputGroup
                 label="Project Brief"
-                placeholder="Tell me about the app, the technology involved, and the support you're looking for."
+                placeholder="Tell me about the app, cloud infrastructure (AWS/DevOps), CI/CD needs, or the technology involved."
                 value={formData.message}
                 onChange={handleChange('message')}
                 multiline

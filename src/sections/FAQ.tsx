@@ -4,24 +4,24 @@ import { ScrollReveal } from '../components/ScrollReveal'
 
 const faqs = [
   {
-    q: 'What kinds of projects can you help with?',
-    a: 'I can support web applications, mobile apps, backend APIs, dashboards, internal tools, and integration work for agencies, startups, and product teams.',
+    q: 'What DevOps, AWS, and Cloud services do you provide?',
+    a: 'I specialize in AWS cloud architecture (EC2, ECS, Lambda, S3, RDS, CloudFront), Docker containerization, infrastructure-as-code with Terraform, automated deployments, monitoring, and setting up high-availability environments.',
   },
   {
-    q: 'Can you work with an existing development team?',
-    a: 'Yes. I can support a current team with implementation, integration work, API development, frontend or backend tasks, and delivery support alongside your existing process.',
+    q: 'Can you set up automated CI/CD pipelines for our team?',
+    a: 'Yes. I configure end-to-end continuous integration and continuous deployment pipelines using GitHub Actions, GitLab CI, and AWS developer tools. This includes automated test runs, container builds, staging preview environments, and zero-downtime production releases.',
   },
   {
-    q: 'Can you contribute to an existing codebase?',
-    a: 'Yes. I can join an active codebase, understand the current architecture, and help implement features, fix issues, and improve the quality of the work without disrupting the existing setup.',
+    q: 'What kinds of software development projects do you build?',
+    a: 'I build modern full-stack web applications, backend APIs (REST & GraphQL), microservices, dashboards, and internal tools with React, Next.js, Node.js, Python, and TypeScript, backed by robust cloud infrastructure.',
   },
   {
-    q: 'How does a project engagement begin?',
-    a: 'We start by understanding the requirement, the technical context, and the outcome you want. From there we agree on scope, deliverables, milestones, and the work to be built.',
+    q: 'Can you containerize an existing app or migrate it to AWS?',
+    a: 'Yes. I help containerize existing applications with Docker, migrate databases and assets to AWS cloud services, optimize infrastructure costs, and set up automated deployment pipelines without downtime.',
   },
   {
-    q: 'Can you help with APIs, integrations, and deployment?',
-    a: 'Yes. I can assist with API development, database or Firebase integrations, third-party services, deployment automation, and handover support when those tasks are included in the agreed scope.',
+    q: 'Can you work alongside our current development or operations team?',
+    a: 'Absolutely. I can step in as a dedicated DevOps/cloud engineer or full-stack contributor, collaborating via pull requests, documentation, and agile workflows alongside your existing engineers.',
   },
 ]
 
