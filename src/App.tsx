@@ -75,8 +75,8 @@ function App() {
               <div>
                 <AnimatedHeading text={"Your next software\nproject,\nbuilt and shipped."} />
                 <FadeIn delay={800} duration={1000}>
-                  <p className="text-base md:text-lg text-gray-300 mb-5 max-w-xl">
-                    I help software agencies and startups build full-stack web applications, resilient AWS cloud infrastructure, automated CI/CD pipelines, and DevOps workflows engineered for speed and reliability.
+                  <p className="text-base md:text-lg text-gray-300 mb-5 max-w-xl leading-relaxed">
+                    I build high-performance web applications, iOS & Android mobile apps, intelligent AI applications, and robust backend architectures — fully backed by scalable AWS cloud infrastructure and automated DevOps CI/CD pipelines.
                   </p>
                 </FadeIn>
                 <FadeIn delay={1200} duration={1000}>
@@ -95,14 +95,14 @@ function App() {
                     </button>
                   </div>
 
-                  {/* DevOps & Cloud Badges */}
+                  {/* Core Tech Stack Badges */}
                   <div className="mt-6 flex flex-wrap items-center gap-2 text-xs text-gray-300">
-                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">AWS Cloud</span>
-                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">DevOps</span>
-                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">CI/CD Pipelines</span>
-                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">Docker & IaC</span>
-                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">Automated Deployments</span>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">Web (React / Next.js)</span>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">Mobile (iOS & Android)</span>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">AI Apps & Agents</span>
                     <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">Full-Stack & APIs</span>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">DevOps & CI/CD</span>
+                    <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono">AWS Cloud</span>
                   </div>
                 </FadeIn>
               </div>
@@ -111,14 +111,14 @@ function App() {
                 <FadeIn delay={1400} duration={1000}>
                   <div className="liquid-glass border border-white/20 px-6 py-3 rounded-xl">
                     <span className="text-lg md:text-xl lg:text-2xl font-light">
-                      Engineering. Cloud. Automation.
+                      Web • Mobile • AI • Cloud
                     </span>
                   </div>
                 </FadeIn>
                 <FadeIn delay={1600} duration={1000}>
                   <div className="flex items-center gap-2 text-xs text-gray-400 px-2">
                     <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>AWS Architecture • Automated CI/CD • Zero Downtime</span>
+                    <span>Full-Stack Development • AI Integration • AWS & DevOps</span>
                   </div>
                 </FadeIn>
               </div>

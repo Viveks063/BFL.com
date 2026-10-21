@@ -4,24 +4,24 @@ import { ScrollReveal } from '../components/ScrollReveal'
 
 const faqs = [
   {
+    q: 'What web and mobile application development services do you offer?',
+    a: 'I build end-to-end web applications (React, Next.js, TypeScript) and cross-platform mobile apps for iOS and Android (Flutter, React Native). This includes responsive user interfaces, native device features, state management, offline sync, and app store publishing.',
+  },
+  {
+    q: 'Can you build AI applications and integrate LLMs?',
+    a: 'Yes. I develop intelligent AI-powered applications, integrating foundation models (OpenAI, Anthropic Claude, Google Gemini), custom autonomous AI agents, Retrieval-Augmented Generation (RAG) pipelines, semantic search, and generative workflows into your existing product.',
+  },
+  {
+    q: 'Do you handle complete full-stack development (frontend & backend)?',
+    a: 'Absolutely. I build both sides of the application: sleek, interactive frontends as well as high-throughput backend APIs, microservices (Node.js, Express, Python, Go), database architecture (PostgreSQL, MongoDB), authentication, and caching layers.',
+  },
+  {
     q: 'What DevOps, AWS, and Cloud services do you provide?',
-    a: 'I specialize in AWS cloud architecture (EC2, ECS, Lambda, S3, RDS, CloudFront), Docker containerization, infrastructure-as-code with Terraform, automated deployments, monitoring, and setting up high-availability environments.',
+    a: 'I specialize in AWS cloud architecture (EC2, ECS, Lambda serverless, S3, RDS, CloudFront), Docker containerization, Terraform Infrastructure as Code (IaC), automated CI/CD pipelines (GitHub Actions, GitLab), and zero-downtime production deployments.',
   },
   {
-    q: 'Can you set up automated CI/CD pipelines for our team?',
-    a: 'Yes. I configure end-to-end continuous integration and continuous deployment pipelines using GitHub Actions, GitLab CI, and AWS developer tools. This includes automated test runs, container builds, staging preview environments, and zero-downtime production releases.',
-  },
-  {
-    q: 'What kinds of software development projects do you build?',
-    a: 'I build modern full-stack web applications, backend APIs (REST & GraphQL), microservices, dashboards, and internal tools with React, Next.js, Node.js, Python, and TypeScript, backed by robust cloud infrastructure.',
-  },
-  {
-    q: 'Can you containerize an existing app or migrate it to AWS?',
-    a: 'Yes. I help containerize existing applications with Docker, migrate databases and assets to AWS cloud services, optimize infrastructure costs, and set up automated deployment pipelines without downtime.',
-  },
-  {
-    q: 'Can you work alongside our current development or operations team?',
-    a: 'Absolutely. I can step in as a dedicated DevOps/cloud engineer or full-stack contributor, collaborating via pull requests, documentation, and agile workflows alongside your existing engineers.',
+    q: 'Can you integrate with an existing team or codebase?',
+    a: 'Yes. I can contribute as a lead full-stack engineer, mobile specialist, AI developer, or DevOps engineer alongside your current team, maintaining clean code standards, git workflows, and transparent communication.',
   },
 ]
 

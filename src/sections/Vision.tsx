@@ -5,7 +5,7 @@ export function Vision() {
         className="text-white text-3xl sm:text-4xl md:text-5xl font-light text-center mb-12 sm:mb-24"
         style={{ letterSpacing: '-0.04em' }}
       >
-        Engineering robust software and scalable cloud infrastructure.
+        Engineering modern web, mobile, AI apps & scalable cloud infrastructure.
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 max-w-[1400px] mx-auto">
@@ -14,12 +14,12 @@ export function Vision() {
           <div className="absolute top-1/2 -translate-y-1/2 -left-[420px] h-[460px] w-[460px] rounded-full bg-[#1e3a8a] blur-3xl opacity-40" />
           <div className="relative z-10 flex flex-col h-full">
             <h3 className="text-white text-xl sm:text-2xl font-light leading-tight">
-              Full-Stack &
+              Web, Mobile &
               <br />
-              AWS Cloud Architecture
+              AI Applications
             </h3>
             <p className="mt-12 sm:mt-20 text-[13px] sm:text-[14px] leading-relaxed text-white/70 font-light max-w-[280px]">
-              From interactive frontend applications to resilient AWS cloud environments, I architect systems built for performance, security, and high availability.
+              From interactive React/Next.js web platforms and iOS/Android mobile apps to smart AI integrations, I turn requirements into polished, high-performing digital products.
             </p>
           </div>
         </div>
@@ -55,12 +55,12 @@ export function Vision() {
           <div className="absolute -top-28 -right-28 h-56 w-56 rounded-full bg-[#1e3a8a] blur-3xl opacity-40" />
           <div className="relative z-10 flex flex-col h-full">
             <h3 className="text-white text-xl sm:text-2xl font-light leading-tight">
-              DevOps, CI/CD
+              Full-Stack Systems &
               <br />
-              & Automated Deployments
+              Cloud DevOps
             </h3>
             <p className="mt-auto text-[13px] sm:text-[14px] leading-relaxed text-white/70 font-light max-w-[320px]">
-              Eliminate manual releases and infrastructure bottlenecks with automated testing, Docker containers, and robust CI/CD pipelines that deploy seamlessly to production.
+              High-throughput backend APIs, databases, automated CI/CD pipelines, and resilient AWS cloud infrastructure engineered for scalability, security, and zero-downtime shipping.
             </p>
           </div>
         </div>

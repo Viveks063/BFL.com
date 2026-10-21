@@ -234,9 +234,9 @@ export function AuroraSignUp() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="space-y-3">
-              <h2 className="text-4xl font-medium tracking-tight whitespace-nowrap">Let&apos;s Build Something Useful</h2>
+              <h2 className="text-4xl font-medium tracking-tight whitespace-nowrap">Let&apos;s Build Something Great</h2>
               <p className="text-sm leading-relaxed text-white/60 px-0">
-                Share a little about your project, AWS or DevOps requirements, CI/CD automation, and the engineering support you need.
+                Share a little about your project — whether it&apos;s a web platform, iOS/Android mobile app, AI integration, or AWS cloud infrastructure.
               </p>
             </motion.div>
 
@@ -260,7 +260,7 @@ export function AuroraSignUp() {
             {/* Header */}
             <div className="space-y-2">
               <h1 className="text-3xl font-medium tracking-tight">Tell me about your project</h1>
-              <p className="text-sm text-white/40">Share a few details and I&apos;ll get in touch to discuss your architecture, software build, or cloud requirements.</p>
+              <p className="text-sm text-white/40">Share a few details and I&apos;ll get in touch to discuss your web, mobile, AI, or cloud engineering requirements.</p>
             </div>
 
             {/* Form */}
@@ -293,7 +293,7 @@ export function AuroraSignUp() {
 
               <InputGroup
                 label="Project or Company"
-                placeholder="What are you building or deploying? (e.g., SaaS App, AWS Setup)"
+                placeholder="What are you building? (e.g. Web App, Mobile App, AI Solution, AWS Cloud)"
                 value={formData.project}
                 onChange={handleChange('project')}
                 disabled={status === 'loading'}
@@ -301,7 +301,7 @@ export function AuroraSignUp() {
 
               <InputGroup
                 label="Project Brief"
-                placeholder="Tell me about the app, cloud infrastructure (AWS/DevOps), CI/CD needs, or the technology involved."
+                placeholder="Tell me about the web/mobile app, AI requirements, backend services, or cloud/DevOps support you're looking for."
                 value={formData.message}
                 onChange={handleChange('message')}
                 multiline

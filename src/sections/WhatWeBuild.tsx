@@ -2,7 +2,7 @@ import { SectionHeading } from '../components/SectionHeading'
 import { GradientOrbs } from '../components/GradientOrbs'
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
-import { Cloud, GitBranch, Boxes, Rocket, Server, Terminal } from 'lucide-react'
+import { Globe, Smartphone, Sparkles, Server, GitBranch, Cloud } from 'lucide-react'
 
 type GlowFeatureCardProps = {
   title: string
@@ -56,51 +56,51 @@ function GlowFeatureCard({ title, category, description, icon, gradient, delay }
 
 const cards: GlowFeatureCardProps[] = [
   {
-    title: 'AWS & Cloud Architecture',
-    category: 'Cloud',
-    description: 'Production AWS environments designed for high availability, security, and scalability — EC2, ECS, Lambda serverless, S3, RDS, VPCs, and CloudFront CDN.',
-    icon: <Cloud className="w-6 h-6 text-amber-400" />,
-    gradient: 'linear-gradient(137deg, #F59E0B 0%, #FCD34D 45%, #F97316 100%)',
+    title: 'Full-Stack Web Applications',
+    category: 'Web Apps',
+    description: 'High-performance, responsive web applications, SaaS platforms, and interactive dashboards built with React, Next.js, and TypeScript with clean frontend & backend integration.',
+    icon: <Globe className="w-6 h-6 text-cyan-400" />,
+    gradient: 'linear-gradient(137deg, #06B6D4 0%, #22D3EE 45%, #3B82F6 100%)',
     delay: 0.1,
   },
   {
-    title: 'CI/CD & DevOps Automation',
-    category: 'DevOps',
-    description: 'Automated continuous integration and delivery pipelines with GitHub Actions and GitLab CI — automated test execution, linting, build artifacts, and zero-downtime shipping.',
-    icon: <GitBranch className="w-6 h-6 text-emerald-400" />,
-    gradient: 'linear-gradient(137deg, #10B981 0%, #6EE7B7 45%, #06B6D4 100%)',
+    title: 'iOS & Android Mobile Apps',
+    category: 'Mobile',
+    description: 'Cross-platform and native mobile apps built with Flutter and React Native. Smooth 60fps animations, offline data sync, native device APIs, and app store deployment.',
+    icon: <Smartphone className="w-6 h-6 text-emerald-400" />,
+    gradient: 'linear-gradient(137deg, #10B981 0%, #34D399 45%, #059669 100%)',
     delay: 0.15,
   },
   {
-    title: 'Docker, K8s & IaC',
-    category: 'Infrastructure',
-    description: 'Containerized microservices with Docker, container orchestration with Kubernetes/ECS, and Infrastructure-as-Code (IaC) using Terraform for repeatable environments.',
-    icon: <Boxes className="w-6 h-6 text-blue-400" />,
-    gradient: 'linear-gradient(137deg, #3B82F6 0%, #60A5FA 45%, #8B5CF6 100%)',
+    title: 'AI Applications & LLM Systems',
+    category: 'AI & Machine Learning',
+    description: 'Intelligent AI integrations, OpenAI/Claude/Gemini LLM implementations, RAG document search pipelines, autonomous AI agents, and smart workflow automations.',
+    icon: <Sparkles className="w-6 h-6 text-purple-400" />,
+    gradient: 'linear-gradient(137deg, #A855F7 0%, #C084FC 45%, #EC4899 100%)',
     delay: 0.2,
-  },
-  {
-    title: 'Deployments & Release Engineering',
-    category: 'Delivery',
-    description: 'Multi-stage release workflows (dev, staging, prod), rollback strategies, custom domain and SSL provisioning, health checks, and live uptime monitoring.',
-    icon: <Rocket className="w-6 h-6 text-rose-400" />,
-    gradient: 'linear-gradient(137deg, #EC4899 0%, #F43F5E 45%, #FB7185 100%)',
-    delay: 0.25,
   },
   {
     title: 'Backend APIs & Microservices',
     category: 'Backend',
-    description: 'High-throughput Node.js, Express, Python, and Go microservices with RESTful and GraphQL APIs, PostgreSQL/MongoDB database design, and caching layers.',
-    icon: <Server className="w-6 h-6 text-purple-400" />,
-    gradient: 'linear-gradient(137deg, #8B5CF6 0%, #A855F7 45%, #C084FC 100%)',
+    description: 'High-throughput RESTful and GraphQL APIs built in Node.js, Express, Python, and Go with PostgreSQL, MongoDB, Redis caching layers, and third-party integrations.',
+    icon: <Server className="w-6 h-6 text-indigo-400" />,
+    gradient: 'linear-gradient(137deg, #6366F1 0%, #818CF8 45%, #A855F7 100%)',
+    delay: 0.25,
+  },
+  {
+    title: 'DevOps & CI/CD Pipelines',
+    category: 'DevOps',
+    description: 'Automated continuous integration and delivery pipelines with GitHub Actions and GitLab CI — automated test execution, Docker containerization, and zero-downtime shipping.',
+    icon: <GitBranch className="w-6 h-6 text-blue-400" />,
+    gradient: 'linear-gradient(137deg, #3B82F6 0%, #60A5FA 45%, #06B6D4 100%)',
     delay: 0.3,
   },
   {
-    title: 'Full-Stack Web Applications',
-    category: 'Full-Stack',
-    description: 'End-to-end web applications and dashboards built with React, Next.js, and TypeScript, engineered for lightning-fast responsiveness and clean architecture.',
-    icon: <Terminal className="w-6 h-6 text-cyan-400" />,
-    gradient: 'linear-gradient(137deg, #06B6D4 0%, #22D3EE 45%, #3B82F6 100%)',
+    title: 'AWS & Cloud Architecture',
+    category: 'Cloud',
+    description: 'Production-ready cloud environments on AWS — scalable VPCs, EC2, ECS container clusters, Lambda serverless, S3, RDS, CloudFront CDN, and Terraform IaC automation.',
+    icon: <Cloud className="w-6 h-6 text-amber-400" />,
+    gradient: 'linear-gradient(137deg, #F59E0B 0%, #FCD34D 45%, #F97316 100%)',
     delay: 0.35,
   },
 ]
@@ -112,8 +112,8 @@ export function WhatWeBuild() {
       <div className="relative z-10">
         <SectionHeading
           label="Capabilities"
-          title="DevOps, Cloud Architecture & Full-Stack Engineering"
-          description="From scalable AWS cloud infrastructure and automated CI/CD pipelines to end-to-end full-stack software delivery."
+          title="Web, Mobile, AI & Cloud Engineering"
+          description="End-to-end full-stack software development, cross-platform mobile apps, AI integrations, and production AWS cloud architecture with automated DevOps pipelines."
           gradient
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 lg:gap-6 w-full max-w-[1150px] mx-auto">

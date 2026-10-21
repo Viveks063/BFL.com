@@ -6,28 +6,28 @@ import { Spotlight } from '@/components/ui/spotlight'
 
 const features = [
   {
-    title: 'AWS & Cloud Architecture',
-    description: 'Cost-optimized, scalable cloud architecture on AWS with high availability, secure VPCs, and automated scaling.',
+    title: 'Full-Stack Web & Mobile Apps',
+    description: 'Modern, responsive web applications (React, Next.js) and cross-platform mobile apps (Flutter, React Native) built for sleek UX and performance.',
     number: '01',
-    accent: 'rgba(245, 158, 11, 0.4)',
+    accent: 'rgba(6, 182, 212, 0.4)',
   },
   {
-    title: 'Automated CI/CD & Deployments',
-    description: 'End-to-end continuous integration and deployment pipelines using GitHub Actions and GitLab for zero-downtime shipping.',
+    title: 'AI Applications & Smart Agents',
+    description: 'Integrating LLMs (OpenAI, Claude, Gemini), autonomous AI agents, and RAG pipelines to automate workflows and empower applications.',
     number: '02',
+    accent: 'rgba(168, 85, 247, 0.4)',
+  },
+  {
+    title: 'Backend Architecture & Robust APIs',
+    description: 'High-throughput Node.js, Python, and Go microservices, database modeling (PostgreSQL, MongoDB), and secure REST/GraphQL API design.',
+    number: '03',
     accent: 'rgba(59, 130, 246, 0.4)',
   },
   {
-    title: 'Full-Stack Software Engineering',
-    description: 'Clean, maintainable web applications and backend APIs engineered to solve business problems and scale smoothly.',
-    number: '03',
-    accent: 'rgba(20, 184, 166, 0.4)',
-  },
-  {
-    title: 'Infrastructure as Code & Automation',
-    description: 'Automated provisioning with Terraform, Docker containerization, and scripts that turn complex manual ops into one-click commands.',
+    title: 'DevOps & AWS Cloud Infrastructure',
+    description: 'Automated CI/CD pipelines with GitHub Actions, Docker containerization, and cost-optimized AWS cloud environments with zero-downtime shipping.',
     number: '04',
-    accent: 'rgba(139, 92, 246, 0.4)',
+    accent: 'rgba(245, 158, 11, 0.4)',
   },
 ]
 
@@ -37,7 +37,7 @@ export function WhyBFL() {
       <div className="relative z-10">
         <SectionHeading
           label="Why BuildForgeLabs"
-          title="Practical engineering, clear delivery."
+          title="Web, Mobile, AI & Cloud Engineering."
           gradient
         />
 
@@ -56,19 +56,19 @@ export function WhyBFL() {
                   className="text-3xl md:text-4xl lg:text-5xl font-normal gradient-text mb-4"
                   style={{ letterSpacing: '-0.04em' }}
                 >
-                  Full-stack software & cloud infrastructure
+                  Full-stack software, mobile, AI & cloud
                 </h3>
                 <p className="text-gray-400 max-w-lg leading-relaxed mb-6">
-                  I work with agencies, founders, and product teams to build robust web applications, scalable AWS cloud infrastructure, automated CI/CD pipelines, and DevOps workflows that make releasing software predictable and fast.
+                  I work with agencies, founders, and product teams to build modern web applications, cross-platform mobile apps, AI-powered features, backend microservices, and automated AWS cloud infrastructure.
                 </p>
                 <div className="flex gap-6">
                   <div>
-                    <div className="text-2xl font-medium">Cloud & DevOps</div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wider">AWS & Automation</div>
+                    <div className="text-2xl font-medium">Full-Stack & Mobile</div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider">Web, Apps & AI</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-medium">Delivery</div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wider">Build, deploy & handover</div>
+                    <div className="text-2xl font-medium">Cloud & DevOps</div>
+                    <div className="text-xs text-gray-500 uppercase tracking-wider">AWS & Automated CI/CD</div>
                   </div>
                 </div>
               </div>

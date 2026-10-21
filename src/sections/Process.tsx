@@ -3,11 +3,11 @@ import { SectionHeading } from '../components/SectionHeading'
 import { GradientOrbs } from '../components/GradientOrbs'
 
 const steps = [
-  { number: '01', title: 'Understand requirements & architecture', description: 'Clarify business goals, technical stack, cloud dependencies, and the target infrastructure.' },
-  { number: '02', title: 'Scope roadmap & infrastructure design', description: 'Define deliverables, milestones, API contracts, AWS architecture, and pipeline specs.' },
-  { number: '03', title: 'Develop, architect & integrate', description: 'Build full-stack features, construct backend microservices, and provision cloud environments with regular code reviews.' },
-  { number: '04', title: 'Containerize, automate & test', description: 'Dockerize applications, build CI/CD test and linting workflows, and validate system performance.' },
-  { number: '05', title: 'Deploy, monitor & hand over', description: 'Execute zero-downtime production deployment, configure DNS/SSL, set up monitoring, and provide clean documentation.' },
+  { number: '01', title: 'Understand requirements & product vision', description: 'Clarify business goals, web/mobile user experience, AI feature needs, and target cloud infrastructure.' },
+  { number: '02', title: 'Scope roadmap & system architecture', description: 'Define deliverables, UI/UX designs, mobile app architecture, backend API contracts, and AWS cloud specs.' },
+  { number: '03', title: 'Build full-stack, mobile & AI features', description: 'Develop responsive web applications, iOS/Android mobile screens, AI agent workflows, and backend microservices with continuous reviews.' },
+  { number: '04', title: 'Containerize, automate & test', description: 'Dockerize services, build automated CI/CD pipelines, execute automated tests, and validate cross-device responsiveness.' },
+  { number: '05', title: 'Deploy, launch & hand over', description: 'Publish web apps, release mobile builds to stores, execute zero-downtime AWS deployments, and provide comprehensive documentation.' },
 ]
 
 export function Process() {

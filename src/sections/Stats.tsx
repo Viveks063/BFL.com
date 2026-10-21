@@ -3,10 +3,10 @@ import { ScrollReveal } from '../components/ScrollReveal'
 import { AnimatedCounter } from '../components/AnimatedCounter'
 
 const stats = [
-  { value: 15, suffix: '+', label: 'Cloud & web builds', accent: 'rgba(139, 92, 246, 0.4)' },
-  { value: 99, suffix: '.9%', label: 'Uptime & reliability focus', accent: 'rgba(59, 130, 246, 0.4)' },
-  { value: 20, suffix: '+', label: 'AWS & DevOps tools', accent: 'rgba(20, 184, 166, 0.4)' },
-  { value: 100, suffix: '%', label: 'Automated CI/CD delivery', accent: 'rgba(245, 158, 11, 0.4)' },
+  { value: 25, suffix: '+', label: 'Web, mobile & cloud builds', accent: 'rgba(139, 92, 246, 0.4)' },
+  { value: 100, suffix: '%', label: 'Full-stack & AI capability', accent: 'rgba(59, 130, 246, 0.4)' },
+  { value: 99, suffix: '.9%', label: 'Cloud uptime & reliability', accent: 'rgba(20, 184, 166, 0.4)' },
+  { value: 20, suffix: '+', label: 'DevOps & AI frameworks', accent: 'rgba(245, 158, 11, 0.4)' },
 ]
 
 export function Stats() {
